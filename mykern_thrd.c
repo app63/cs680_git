@@ -53,3 +53,5 @@ static int __init mykernel_init(void){
     my_kernel_thread_create_2();
     printk(KERN_NOTICE "Aditya: m_k_t_do_something threads are created.\n");
 }
+
+module_init(mykernel_init);
