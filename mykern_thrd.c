@@ -8,6 +8,9 @@
 static void my_kernel_thread_create_1(void);
 static void my_kernel_thread_create_2(void);
 
+static void m_k_t_do_something_1(void);
+static void m_k_t_do_something_2(void);
+
 
 static void my_kernel_thread_create_1(void){
   int mypid;
