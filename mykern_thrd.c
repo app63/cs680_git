@@ -14,14 +14,14 @@ static void m_k_t_do_something_2(void);
 
 static void my_kernel_thread_create_1(void){
   int mypid;
-  printk(KERN_NOTICE "Aditya: Calling kernel_thread(Aditya: my_ker_thd_1)\n");
+  printk(KERN_NOTICE "Aditya: Calling kernel_thread(my_ker_thd_1)\n");
   mypid = kernel_thread(m_k_t_do_something_1, NULL, CLONE_KERNEL);
   printk(KERN_NOTICE "Aditya: my_ker_thd_1 = %d\n", mypid);
 }
 
 static void my_kernel_thread_create_2(void){
   int mypid;
-  printk(KERN_NOTICE "Aditya: Calling kernel_thread(Aditya: my_ker_thd_2)\n");
+  printk(KERN_NOTICE "Aditya: Calling kernel_thread(my_ker_thd_2)\n");
   mypid = kernel_thread(m_k_t_do_something_2, NULL, CLONE_KERNEL);
   printk(KERN_NOTICE "Aditya: my_ker_thd_2 = %d\n", mypid);
 }
