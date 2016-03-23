@@ -3,6 +3,7 @@
 #include <linux/types.h>
 #include <linux/smpboot.h>
 
+#define CLONE_KERNEL    (CLONE_FS | CLONE_FILES | CLONE_SIGHAND)
 
 static void my_kernel_thread_create_1(void);
 static void my_kernel_thread_create_2(void);
