@@ -8,8 +8,8 @@
 static void my_kernel_thread_create_1(void);
 static void my_kernel_thread_create_2(void);
 
-static int m_k_t_do_something_1(void *);
-static int m_k_t_do_something_2(void *);
+ int m_k_t_do_something_1(void *);
+ int m_k_t_do_something_2(void *);
 
 
 static void my_kernel_thread_create_1(void){
@@ -27,7 +27,7 @@ static void my_kernel_thread_create_2(void){
 }
 
 
-static int m_k_t_do_something_1(void *){
+ int m_k_t_do_something_1(void *){
   struct task_struct *curtask = current;
   strcpy(curtask->comm, "Aditya: m_k_t_do_something_1");
   set_task_state(curtask, TASK_RUNNING);
@@ -39,7 +39,7 @@ static int m_k_t_do_something_1(void *){
 
 }
 
-static int m_k_t_do_something_2(void *){
+ int m_k_t_do_something_2(void *){
   struct task_struct *curtask = current;
   strcpy(curtask->comm, "Aditya: m_k_t_do_something_2");
   set_task_state(curtask, TASK_RUNNING);
