@@ -1,4 +1,4 @@
-obj-m += myhotplug2.o
+obj-m += mykern_thrd.o
 
 
 
