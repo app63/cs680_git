@@ -8,8 +8,8 @@
 static void my_kernel_thread_create_1(void);
 static void my_kernel_thread_create_2(void);
 
-static void m_k_t_do_something_1(void);
-static void m_k_t_do_something_2(void);
+static int m_k_t_do_something_1(void *);
+static int m_k_t_do_something_2(void *);
 
 
 static void my_kernel_thread_create_1(void){
@@ -27,22 +27,27 @@ static void my_kernel_thread_create_2(void){
 }
 
 
-static void m_k_t_do_something_1(void){
+static int m_k_t_do_something_1(void *){
   struct task_struct *curtask = current;
   strcpy(curtask->comm, "Aditya: m_k_t_do_something_1");
   set_task_state(curtask, TASK_RUNNING);
   printk(KERN_NOTICE "Aditya: m_k_t_do_something_1 is about to be scheduled.\n");
   schedule();
   printk(KERN_NOTICE "Aditya: m_k_t_do_something_1 is now scheduled.\n");
+  
+    return 0;
+
 }
 
-static void m_k_t_do_something_2(void){
+static int m_k_t_do_something_2(void *){
   struct task_struct *curtask = current;
   strcpy(curtask->comm, "Aditya: m_k_t_do_something_2");
   set_task_state(curtask, TASK_RUNNING);
   printk(KERN_NOTICE "Aditya: m_k_t_do_something_2 is about to be scheduled.\n");
   schedule();
   printk(KERN_NOTICE "Aditya: m_k_t_do_something_2 is now scheduled.\n");
+  
+  return 0;
 }
 
 
